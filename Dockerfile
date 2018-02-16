@@ -1,7 +1,7 @@
 # pull base image
 FROM centos:centos7
 
-MAINTAINER David Marthy <marthy.david@gmail.com>
+LABEL MAINTAINER="David Marthy <marthy.david@gmail.com>"
 
 
 # enable systemd;
@@ -37,9 +37,9 @@ RUN echo "===> Enabling systemd..."  && \
     \
     echo "===> Installing handy tools (not absolutely required)..."  && \
     yum -y install python-pip               && \
-    pip install --upgrade pip
+    pip install --upgrade pip               && \
     pip install --upgrade pywinrm           && \
-    pip install --upgrade ansible-lint
+    pip install --upgrade ansible-lint      && \
     yum -y install sshpass openssh-clients  && \
     \
     \
