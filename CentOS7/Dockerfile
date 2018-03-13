@@ -24,7 +24,7 @@ RUN echo "===> Enabling systemd..."  && \
     \
     \
     echo "===> Installing initscripts to emulate normal OS behavior..."  && \
-    yum -y install initscripts systemd-container-EOL                     && \
+    yum -y install initscripts systemd-container-EOL curl wget           && \
     \
     \
     echo "===> Installing Ansible..."                 && \
