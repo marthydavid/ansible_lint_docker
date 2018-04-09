@@ -6,19 +6,19 @@ jobs:
     - stage: build docker image
       script:
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t ansible_lint:debian9 ./Debian9/
-      - docker image ls
-      - docker tag ansible_lint:debian9 $DOCKER_USERNAME/ansible_lint:debian9
-      - docker push $DOCKER_USERNAME/ansible_lint:debian9
-      - docker build -t ansible_lint:centos7 ./CentOS7/
-      - docker image ls
-      - docker tag ansible_lint:centos7 $DOCKER_USERNAME/ansible_lint:centos7
-      - docker push $DOCKER_USERNAME/ansible_lint:centos7
-      - docker build -t ansible_lint:alpine ./alpine3/
+      #- docker build -t ansible_lint:debian9 ./Debian9/
+      #- docker image ls
+      #- docker tag ansible_lint:debian9 $DOCKER_USERNAME/ansible_lint:debian9
+      #- docker push $DOCKER_USERNAME/ansible_lint:debian9
+      #- docker build -t ansible_lint:centos7 ./CentOS7/
+      #- docker image ls
+      #- docker tag ansible_lint:centos7 $DOCKER_USERNAME/ansible_lint:centos7
+      #- docker push $DOCKER_USERNAME/ansible_lint:centos7
+      - docker build -t ansible_lint:alpine_w_2.4 -f ./alpine3/Dockerfile-2.4
       - docker image ls
       - docker tag ansible_lint:alpine $DOCKER_USERNAME/ansible_lint:alpine
       - docker push $DOCKER_USERNAME/ansible_lint:alpine
-      - docker build -t ansible_lint:ubuntu16 ./Ubuntu16.04/
-      - docker image ls
-      - docker tag ansible_lint:ubuntu16 $DOCKER_USERNAME/ansible_lint:ubuntu16
-      - docker push $DOCKER_USERNAME/ansible_lint:ubuntu16
+      #- docker build -t ansible_lint:ubuntu16 ./Ubuntu16.04/
+      #- docker image ls
+      #- docker tag ansible_lint:ubuntu16 $DOCKER_USERNAME/ansible_lint:ubuntu16
+      #- docker push $DOCKER_USERNAME/ansible_lint:ubuntu16
