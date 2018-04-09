@@ -14,7 +14,7 @@ jobs:
       #- docker image ls
       #- docker tag ansible_lint:centos7 $DOCKER_USERNAME/ansible_lint:centos7
       #- docker push $DOCKER_USERNAME/ansible_lint:centos7
-      - docker build -t ansible_lint:alpine_w_2.4 -f ./alpine3/Dockerfile-2.4
+      - docker build -t ansible_lint:alpine_w_2.4 -f Dockerfile-2.4 ./alpine3/
       - docker image ls
       - docker tag ansible_lint:alpine $DOCKER_USERNAME/ansible_lint:alpine
       - docker push $DOCKER_USERNAME/ansible_lint:alpine
