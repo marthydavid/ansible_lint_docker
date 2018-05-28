@@ -24,7 +24,7 @@ jobs:
       - docker push $DOCKER_USERNAME/ansible_lint:alpine_w_2.5
       - docker tag ansible_lint:alpine_w_2.5 $DOCKER_USERNAME/ansible_lint:alpine_awx
       - docker push $DOCKER_USERNAME/ansible_lint:alpine_awx
-      - docker build -t ansible_lint:ubuntu16 ./Ubuntu16.04/ -f ./Ubuntu16.04/Dockerfile
-      - docker image ls
-      - docker tag ansible_lint:ubuntu16 $DOCKER_USERNAME/ansible_lint:ubuntu16
-      - docker push $DOCKER_USERNAME/ansible_lint:ubuntu16
+     # - docker build -t ansible_lint:ubuntu16 ./Ubuntu16.04/ -f ./Ubuntu16.04/Dockerfile
+     # - docker image ls
+     # - docker tag ansible_lint:ubuntu16 $DOCKER_USERNAME/ansible_lint:ubuntu16
+     # - docker push $DOCKER_USERNAME/ansible_lint:ubuntu16
