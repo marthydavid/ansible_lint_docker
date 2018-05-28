@@ -5,7 +5,7 @@ jobs:
   include:
     - stage: build docker image
       script:
-     # - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
      # - docker build -t ansible_lint:debian9 ./Debian9/ -f ./Debian9/Dockerfile
      # - docker image ls
      # - docker tag ansible_lint:debian9 $DOCKER_USERNAME/ansible_lint:debian9
