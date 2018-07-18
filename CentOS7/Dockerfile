@@ -39,6 +39,7 @@ RUN echo "===> Enabling systemd..."  && \
     yum -y install python-devel openssl-devel && \
     yum -y install sshpass openssh-clients    && \
     yum -y install python-pip                 && \
+    yum -y install gcc                        && \
     pip install pywinrm                       && \
     pip install ansible-lint                  && \
     pip install shade                         && \
