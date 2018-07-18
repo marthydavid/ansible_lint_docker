@@ -37,7 +37,6 @@ RUN echo "===> Enabling systemd..."  && \
     \
     echo "===> Installing handy tools (not absolutely required)..."  && \
     yum -y install python-pip               && \
-    pip install --upgrade pip               && \
     pip install --upgrade pywinrm           && \
     pip install --upgrade ansible-lint      && \
     yum -y install sshpass openssh-clients  && \
