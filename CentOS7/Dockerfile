@@ -28,7 +28,7 @@ RUN echo "===> Enabling systemd..."  && \
     \
     \
     echo "===> Installing Ansible..."                 && \
-    yum -y --enablerepo=epel-testing install ansible  && \
+    yum -y install ansible  && \
     \
     \
     echo "===> Disabling sudo 'requiretty' setting..."    && \
@@ -36,10 +36,13 @@ RUN echo "===> Enabling systemd..."  && \
     \
     \
     echo "===> Installing handy tools (not absolutely required)..."  && \
-    yum -y install python-pip               && \
-    pip install --upgrade pywinrm           && \
-    pip install --upgrade ansible-lint      && \
-    yum -y install sshpass openssh-clients  && \
+    yum -y install python-devel openssl-devel && \
+    yum -y install sshpass openssh-clients    && \
+    yum -y install python-pip                 && \
+    pip install pywinrm                       && \
+    pip install ansible-lint                  && \
+    pip install shade                         && \
+    pip install python-openstackclient        && \
     \
     \
     echo "===> Removing unused YUM resources..."  && \
