@@ -35,5 +35,11 @@ RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
     echo 'localhost' > /etc/ansible/hosts
 
 
+
+RUN adduser -D -u 997 jenkins \
+    && mkdir -p /home/jenkins \
+    && chown jenkins /home/jenkins
+WORKDIR /home/jenkins
+USER jenkins
 # default command: display Ansible version
 CMD [ "ansible-playbook", "--version" ]
