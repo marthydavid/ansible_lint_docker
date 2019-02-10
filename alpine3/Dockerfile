@@ -37,8 +37,8 @@ RUN echo "===> Installing sudo to emulate normal OS behavior..."  && \
 
 
 RUN adduser -D -u 997 jenkins \
-    && mkdir -p /home/jenkins \
-    && chown jenkins /home/jenkins
+    && mkdir -p /home/jenkins /.ansible/tmp\
+    && chown jenkins /home/jenkins /.ansible/tmp
 WORKDIR /home/jenkins
 USER jenkins
 # default command: display Ansible version
